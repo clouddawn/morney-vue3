@@ -1,12 +1,10 @@
 import Vue from "vue";
 import {createRouter, createWebHashHistory} from "vue-router";
 
-// 1. 定义路由组件.
-// 也可以从其他文件导入
-const Home = {template: "<div>Home</div>"};
-const About = {template: "<div>About</div>"};
-
 import Money from "@/views/Money.vue";
+import Labels from "@/views/Labels.vue";
+import Statistics from "@/views/Statistics.vue";
+import NotFound from "@/views/NotFound.vue";
 
 // 2. 定义一些路由
 // 每个路由都需要映射到一个组件。
@@ -14,15 +12,23 @@ import Money from "@/views/Money.vue";
 const routes = [
   {
     path: "/",
-    component: Home
-  },
-  {
-    path: "/about",
-    component: About
+    redirect: "/money"
   },
   {
     path: "/money",
     component: Money
+  },
+  {
+    path: "/labels",
+    component: Labels
+  },
+  {
+    path: "/statistics",
+    component: Statistics
+  },
+  {
+    path: "/:pathMatch(.*)*",
+    component: NotFound
   }
 ];
 

@@ -1,8 +1,8 @@
 <template>
-  <div class="money">
+  <div class="labels">
     <Layout>
       <template #default>
-        Money.vue
+        Labels.vue
       </template>
     </Layout>
   </div>
